@@ -117,7 +117,6 @@ def translate_message(mlist):
 def cipher():
 	clen = len(cwlist)
 	ciphered_message_int=[]
-	ciphered_message_list=[]
 	ct=0
 	for char in melist:
 		cint = int(alpha[char])+int(alpha[cwlist[ct]])
@@ -129,7 +128,6 @@ def cipher_autokey():
 	clen = len(cwlist)
 	mlen = len(melist)
 	ciphered_message_int=[]
-	ciphered_message_list=[]
 	ct=0
 	for char in melist:
 		if ct<clen:
@@ -145,7 +143,6 @@ def cipher_autokey():
 def decipher():
 	clen = len(cwlist)
 	deciphered_message_int=[]
-	deciphered_message_list=[]
 	dt=0
 	for char in melist:
 		dint = int(alpha[char])-int(alpha[cwlist[dt]])
@@ -157,7 +154,6 @@ def decipher_autokey():
 	clen = len(cwlist)
 	mlen = len(melist)
 	deciphered_message_int=[]
-	deciphered_message_list=[]
 	dt=0
 	for char in melist:
 		if dt<clen:
