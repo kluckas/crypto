@@ -1,5 +1,5 @@
 from math import *
-from time import *
+import time
 import os
 
 class bcolors:
