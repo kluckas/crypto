@@ -50,11 +50,13 @@ inputmode=input_mode()
 def input_list():
 	inlist = []
 	if ciphermode==1 and inputmode==1:
+		os.system('clear')
 		instring = raw_input("Please give the message you want to cipher\n")
 		for char in instring:
 			inlist.append(alpha[char])
 			return inlist			
 	elif ciphermode==1 and inputmode==2:
+		os.system('clear')
 		infilevar = raw_input("Please give the name of the file you want to cipher as 'name.txt'\n")
 		fin = open(infilevar, "r")
 		instring = fin.read()
@@ -62,11 +64,13 @@ def input_list():
 			inlist.append(alpha[char])
 			return inlist
 	elif ciphermode==2 and inputmode==1:
+		os.system('clear')
 		instring = raw_input("Please give the message you want to decipher as '1234:5678' and so on.\n")
 		delimiter = ":"
 		inlist = instring.split(delimiter)
 		return inlist
 	elif ciphermode==2 and inputmode==2:
+		os.system('clear')
 		infilevar= raw_input("Please give the name of the file you want to decipher as 'name.txt' Be sure that the file is written in RSA-Standard e.g. '1234:5678'. Do not use linebreaks!\n")
 		fin = open(infilevar , "r")
 		instring = fin.read()
@@ -82,7 +86,7 @@ def cipher():
 	outputlist=[]
 	for element in inputlist:
 		outelement=(element**publicpart) % rsamodul
-		outputlist.append(outelement)
+		outputlist.append(str(outelement))
 	return outputlist
 
 def decipher():
