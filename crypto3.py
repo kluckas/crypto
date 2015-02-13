@@ -14,7 +14,7 @@ class bcolors:
 os.system('clear')
 
 def input_code():
-	code = raw_input('What schall your code be?\n')
+	code = raw_input('What shall your code be?\n')
 	os.system('clear')
 	codelist=[]
 	for char in code:
