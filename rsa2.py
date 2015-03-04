@@ -10,10 +10,12 @@ class bcolors:
     FAIL = '\033[91m'
     ENDC = '\033[0m'
 
-
-privatepart=1373
-publicpart=1721
-rsamodul=263713
+fin1 = open("temporary_key.txt" , "r")
+temp = fin1.readlines()
+fin1.close()
+privatepart=int(temp[5])
+publicpart=int(temp[3])
+rsamodul=int(temp[1])
 
 
 alpha={'A':0, 'a':1, 'B':2, 'b':3, 'C':4, 'c':5, 'D':6, 'd':7, 'E':8, 'e':9, 'F':10, 'f':11, 'G':12, 'g':13, 'H':14, 'h':15, 'I':16, 'i':17, 'J':18, 'j':19, 'K':20, 'k':21, 'L':22, 'l':23, 'M':24, 'm':25, 'N':26, 'n':27, 'O':28, 'o':29, 'P':30, 'p':31, 'Q':32, 'q':33, 'R':34, 'r':35, 'S':36, 's':37, 'T':38, 't':39, 'U':40, 'u':41, 'V':42, 'v':43, 'W':44, 'w':45, 'X':46, 'x':47, 'Y':48, 'y':49, 'Z':50, 'z':51, '!':52, '?':53, '\n':54, '.':55, '0':56, '1':57, '2':58, '3':59, '4':60, '5':61, '6':62, '7':63, '8':64, '9':65, '=':66, ' ':67, '+':68, '-':69, ',':70, ':':71}
@@ -61,6 +63,7 @@ def input_list():
 		infilevar = raw_input("Please give the name of the file you want to cipher as 'name.txt'\n")
 		fin = open(infilevar, "r")
 		instring = fin.read()
+		fin.close()
 		for char in instring:
 			inlist.append(alpha[char])
 		return inlist
